@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Adhigama Tech: Top website developer in Maharashtra, offering expert ERP systems, web development, app development, and SEO-optimized social media solutions for startups, enterprises, and educational institutions. Boost your online presence with us!">
+  <meta name="keywords" content="best website developer Maharashtra, ERP systems, web development Maharashtra, app development, SEO services, social media marketing, IT solutions, affordable web design">
+  <meta name="robots" content="index, follow">
+  <title>Adhigama Tech - Leading IT Solutions & SEO Services in Maharashtra</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS for animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #6B46C1;
+      --secondary: #007BFF;
+      --accent: #10B981;
+      --light: #F7FAFC;
+      --dark: #1A202C;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      color: #333;
+      background-color: var(--light);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+    
+    .section {
+      padding: 5rem 1rem;
+    }
+    
+    .section-title {
+      position: relative;
+      padding-bottom: 1rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .btn-primary:hover {
+      background: #553C9A;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(107, 70, 193, 0.2);
+    }
+    
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+    
+    .service-icon {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+    
+    .counter-box {
+      text-align: center;
+      padding: 2rem;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .counter-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+    
+    .testimonial-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+    
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 5rem;
+      color: rgba(107, 70, 193, 0.1);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    
+    .client-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary);
+    }
+    
+    .pricing-card {
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .pricing-card.popular {
+      border-color: var(--primary);
+      transform: scale(1.03);
+      box-shadow: 0 15px 40px rgba(107, 70, 193, 0.15);
+    }
+    
+    .popular-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: white;
+      padding: 0.25rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1.25rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.2);
+      outline: none;
+    }
+    
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .mobile-menu.active {
+      max-height: 500px;
+    }
+    
+    @media (min-width: 768px) {
+      .section {
+        padding: 6rem 2rem;
+      }
+      
+      .section-title::after {
+        width: 120px;
+      }
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6B46C1',
+            secondary: '#007BFF',
+            accent: '#10B981',
+            light: '#F7FAFC',
+            dark: '#1A202C'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 w-full bg-white shadow-md z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+      <img src="adhigma vertical.png" alt="Adhigama Tech Logo" height="100px" width="250px" class="h-12 md:h-16 w-auto">
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="text-gray-700 hover:text-primary transition font-medium">Home</a>
+        <a href="#about" class="text-gray-700 hover:text-primary transition font-medium">About</a>
+        <a href="#services" class="text-gray-700 hover:text-primary transition font-medium">Services</a>
+        <a href="#portfolio" class="text-gray-700 hover:text-primary transition font-medium">Portfolio</a>
+        <a href="#testimonials" class="text-gray-700 hover:text-primary transition font-medium">Testimonials</a>
+        <a href="#contact" class="text-gray-700 hover:text-primary transition font-medium">Contact</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-white shadow-md px-4">
+      <div class="py-4 space-y-3">
+        <a href="#home" class="block py-2 text-gray-700 hover:text-primary transition font-medium">Home</a>
+        <a href="#about" class="block py-2 text-gray-700 hover:text-primary transition font-medium">About</a>
+        <a href="#services" class="block py-2 text-gray-700 hover:text-primary transition font-medium">Services</a>
+        <a href="#portfolio" class="block py-2 text-gray-700 hover:text-primary transition font-medium">Portfolio</a>
+        <a href="#testimonials" class="block py-2 text-gray-700 hover:text-primary transition font-medium">Testimonials</a>
+        <a href="#contact" class="block py-2 text-gray-700 hover:text-primary transition font-medium">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-primary to-secondary">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-repeat" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSI1IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSIgLz48L3N2Zz4=');"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="text-center md:text-left" data-aos="fade-right">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Transform Your Business with <span class="text-accent">Cutting-Edge</span> IT Solutions
+          </h1>
+          <p class="text-xl text-blue-100 mb-8 max-w-2xl">
+            Premier IT solutions provider in Maharashtra specializing in custom ERP systems, web development, app development, and SEO-optimized digital marketing.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a href="#contact" class="btn-primary inline-flex items-center justify-center">
+              Get Started <i class="ml-2 fas fa-arrow-right"></i>
+            </a>
+            <a href="#services" class="bg-white bg-opacity-20 text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-30 transition">
+              Our Services
+            </a>
+          </div>
+        </div>
+        <div class="flex justify-center" data-aos="fade-left">
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-full opacity-50 blur-2xl animate-pulse"></div>
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600&q=80" alt="IT Solutions" class="relative rounded-full w-72 h-72 md:w-80 md:h-80 object-cover border-8 border-white shadow-2xl floating">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-title text-3xl md:text-4xl font-bold text-gray-800">About Us</h2>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <div class="grid grid-cols-2 gap-6 mb-8">
+            <div class="counter-box">
+              <div class="text-4xl font-bold text-primary mb-2" id="projectsCounter">79+</div>
+              <p class="text-gray-600 font-medium">Projects Delivered</p>
+            </div>
+            <div class="counter-box">
+              <div class="text-4xl font-bold text-primary mb-2" id="clientsCounter">24+</div>
+              <p class="text-gray-600 font-medium">Happy Clients</p>
+            </div>
+            <div class="counter-box">
+              <div class="text-4xl font-bold text-primary mb-2" id="yearsCounter">3+</div>
+              <p class="text-gray-600 font-medium">Years Experience</p>
+            </div>
+            <div class="counter-box">
+              <div class="text-4xl font-bold text-primary mb-2" id="teamCounter">15+</div>
+              <p class="text-gray-600 font-medium">Team Members</p>
+            </div>
+          </div>
+        </div>
+        
+        <div data-aos="fade-left">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4">Your Trusted IT Partner in Maharashtra</h3>
+          <p class="text-gray-600 mb-6">
+            Adhigama Tech is a premier IT solutions provider in Maharashtra, specializing in custom ERP systems, web development, app development, and SEO-optimized digital marketing.
+          </p>
+          <p class="text-gray-600 mb-6">
+            With over 3 years of experience, we empower startups, enterprises, and educational institutions to achieve digital success. Our mission? To deliver innovative, scalable, and cost-effective technology solutions that rank high on search engines and drive business growth.
+          </p>
+          <div class="flex items-center">
+            <!-- <div class="flex -space-x-2 mr-4">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member" class="w-10 h-10 rounded-full border-2 border-white">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member" class="w-10 h-10 rounded-full border-2 border-white">
+              <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Team Member" class="w-10 h-10 rounded-full border-2 border-white">
+            </div> -->
+            <div>
+              <p class="text-gray-600 font-medium">Expert Team</p>
+              <p class="text-sm text-gray-500">Certified professionals</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="section-title text-3xl md:text-4xl font-bold text-gray-800">Our Services</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto mt-4">
+          Boost your business with our top-tier IT and SEO services in Maharashtra. From custom web design to powerful ERP solutions, we've got you covered!
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="card" data-aos="fade-up">
+          <div class="p-6">
+            <div class="service-icon text-center">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">ERP Systems</h3>
+            <p class="text-gray-600 mb-4">
+              Streamline operations with tailored ERP solutions designed for efficiency and growth.
+            </p>
+            <ul class="text-gray-600 space-y-2 mb-6">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                <span>Custom business solutions</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                <span>School management systems</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                <span>Inventory management</span>
+              </li>
+            </ul>
+            <a href="#contact" class="text-primary font-medium inline-flex items-center">
+              Learn more <i class="ml-2 fas fa-arrow-right text-sm"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+          <div class="p-6">
+            <div class="service-icon text-center">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">Web Development</h3>
+            <p class="text-gray-600 mb-4">
+              Create stunning, SEO-optimized websites to enhance your online visibility and user experience.
+            </p>
+            <ul class="text-gray-600 space-y-2 mb-6">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                <span>Responsive design</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                <span>E-commerce solutions</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                <span>Custom web applications</span>
+              </li>
+            </ul>
+            <a href="#contact" class="text-primary font-medium inline-flex items-center">
+              Learn more <i class="ml-2 fas fa-arrow-right text-sm"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <div class="p-6">
+            <div class="service-icon text-center">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">App Development</h3>
+            <p class="text-gray-600 mb-4">
+              Develop cutting-edge mobile apps for iOS and Android to reach your audience anywhere.
+            </p>
+            <ul class="text-gray-600 space-y-2 mb-6">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                <span>Native iOS & Android apps</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                <span>Cross-platform solutions</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                <span>UI/UX design</span>
+              </li>
+            </ul>
+            <a href="#contact" class="text-primary font-medium inline-flex items-center">
+              Learn more <i class="ml-2 fas fa-arrow-right text-sm"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+          <div class="p-6">
+            <div class="service-icon text-center">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">SEO & Social Media</h3>
+            <p class="text-gray-600 mb-4">
+              Elevate your brand with targeted social media campaigns and top-ranking SEO strategies.
+            </p>
+            <ul class="text-gray-600 space-y-2 mb-6">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                <span>Search engine optimization</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                <span>Social media management</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                <span>Content marketing</span>
+              </li>
+            </ul>
+            <a href="#contact" class="text-primary font-medium inline-flex items-center">
+              Learn more <i class="ml-2 fas fa-arrow-right text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="section bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="section-title text-3xl md:text-4xl font-bold text-gray-800">Our Portfolio</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto mt-4">
+          Explore our successful projects that showcase our expertise in web development, ERP, and digital marketing.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card overflow-hidden" data-aos="fade-up">
+          <img src="ERP system.jpg" alt="ERP Platform" class="card-img-top">
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">ERP Platform</h3>
+            <p class="text-gray-600 mb-4">A scalable ERP solution for businesses.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">PHP</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">MySQL</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Laravel</span>
+            </div>
+            <a href="#" class="text-primary font-medium inline-flex items-center">
+              View Project <i class="ml-2 fas fa-external-link-alt text-sm"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="card overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <img src="School ERP.jpg" alt="School ERP System" class="card-img-top">
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">School ERP System</h3>
+            <p class="text-gray-600 mb-4">Custom ERP for educational institutions.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">JavaScript</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Node.js</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">MongoDB</span>
+            </div>
+            <a href="#" class="text-primary font-medium inline-flex items-center">
+              View Project <i class="ml-2 fas fa-external-link-alt text-sm"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="card overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+          <img src="Customsoftware.png" alt="Custom Softwares" class="card-img-top">
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Custom Softwares</h3>
+            <p class="text-gray-600 mb-4">Bespoke applications tailored to your needs.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Python</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Django</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+            </div>
+            <a href="#" class="text-primary font-medium inline-flex items-center">
+              View Project <i class="ml-2 fas fa-external-link-alt text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="section-title text-3xl md:text-4xl font-bold text-white">What Our Clients Say</h2>
+        <p class="text-blue-100 max-w-3xl mx-auto mt-4">
+          Hear from satisfied clients who've boosted their business with our SEO and IT services!
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="testimonial-card" data-aos="fade-up">
+          <p class="text-gray-600 mb-6">
+            "Adhigama Tech's ERP solution transformed our workflow—highly recommend for any business!"
+          </p>
+          <div class="flex items-center">
+            <img src="testimonal.jpeg" alt="Client" class="client-img mr-4">
+            <div>
+              <p class="font-bold text-gray-800">Sandip Patil</p>
+              <p class="text-gray-600 text-sm">Startup Founder, Four Dot Media</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+          <p class="text-gray-600 mb-6">
+            "Their SEO services doubled our website traffic in months—amazing team!"
+          </p>
+          <div class="flex items-center">
+            <img src="testimonal.jpeg" alt="Client" class="client-img mr-4">
+            <div>
+              <p class="font-bold text-gray-800">Samadhan Bari</p>
+              <p class="text-gray-600 text-sm">Business Owner, Kimadhi Multi Services</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+          <p class="text-gray-600 mb-6">
+            "Best IT partner for schools—our ERP system is now seamless!"
+          </p>
+          <div class="flex items-center">
+            <img src="testimonal.jpeg" alt="Client" class="client-img mr-4">
+            <div>
+              <p class="font-bold text-gray-800">Principal Singh</p>
+              <p class="text-gray-600 text-sm">Lord Ganesh English Medium School</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="section bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="section-title text-3xl md:text-4xl font-bold text-gray-800">Pricing Plans</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto mt-4">
+          Affordable IT and SEO solutions tailored to your business needs—grab our special offers now!
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="pricing-card" data-aos="fade-up">
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Social Media Campaigns</h3>
+            <div class="text-3xl font-bold text-primary mb-4">₹15,000<span class="text-lg text-gray-500">/mo</span></div>
+            <ul class="text-gray-600 mb-8 space-y-3">
+              <li class="flex items-start">
+                <i class="fas fa-check text-accent mr-2 mt-1"></i>
+                <span>Social Media Management</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-accent mr-2 mt-1"></i>
+                <span>Ads Management</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-accent mr-2 mt-1"></i>
+                <span>Content Design</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-accent mr-2 mt-1"></i>
+                <span>Monthly Reports</span>
+              </li>
+            </ul>
+            <a href="#contact" class="btn-primary w-full text-center">Get Started</a>
+          </div>
+        </div>
+        
+        <div class="pricing-card popular" data-aos="fade-up" data-aos-delay="100">
+          <div class="popular-badge"> OFFER</div>
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Website Development</h3>
+            <div class="text-3xl font-bold text-primary mb-4">₹15,000<span class="text-lg text-gray-500">/yr</span></div>
+            <ul class="text-gray-600 mb-8 space-y-3">
+              <li class="flex items-start">
+                <i class="fas fa-check text-accent mr-2 mt-1"></i>
+                <span>Custom Website Design</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-accent mr-2 mt-1"></i>
+                <span>Responsive Development</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-accent mr-2 mt-1"></i>
+                <span>SEO Optimization</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-accent mr-2 mt-1"></i>
+                <span>1 Year Hosting & Support</span>
+              </li>
+            </ul>
+            <a href="#contact" class="btn-primary w-full text-center">Get Started</a>
+          </div>
+        </div>
+        
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Business Softwares</h3>
+            <div class="text-3xl font-bold text-primary mb-4">₹25,000<span class="text-lg text-gray-500">/yr</span></div>
+            <ul class="text-gray-600 mb-8 space-y-3">
+              <li class="flex items-start">
+                <i class="fas fa-check text-accent mr-2 mt-1"></i>
+                <span>Custom ERP Solutions</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-accent mr-2 mt-1"></i>
+                <span>Mobile App Integration</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-accent mr-2 mt-1"></i>
+                <span>Hosting & Data Management</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-accent mr-2 mt-1"></i>
+                <span>24/7 Technical Support</span>
+              </li>
+            </ul>
+            <a href="#contact" class="btn-primary w-full text-center">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="section-title text-3xl md:text-4xl font-bold text-gray-800">Contact Us</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto mt-4">
+          Get in touch for top-notch IT and SEO services in Maharashtra—let's grow your business together!
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div data-aos="fade-right">
+          <div class="bg-gray-50 rounded-2xl p-8 h-full">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Get in Touch</h3>
+            
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded-lg text-primary">
+                  <i class="fas fa-envelope text-xl"></i>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg font-medium text-gray-800">Email Us</h4>
+                  <a href="mailto:info@adhigama.tech" class="text-gray-600 hover:text-primary transition">info@adhigama.tech</a>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded-lg text-primary">
+                  <i class="fas fa-phone-alt text-xl"></i>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg font-medium text-gray-800">Call Us</h4>
+                  <a href="tel:+919422779791" class="text-gray-600 hover:text-primary transition">+91 9422779791</a>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded-lg text-primary">
+                  <i class="fas fa-map-marker-alt text-xl"></i>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg font-medium text-gray-800">Visit Us</h4>
+                  <p class="text-gray-600">Shraddha Colony, Jalgaon, Maharashtra</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-10">
+              <h4 class="text-lg font-medium text-gray-800 mb-4">Follow Us</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div data-aos="fade-left">
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <form id="contactForm">
+              <div class="mb-6">
+                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+              </div>
+              
+              <div class="mb-6">
+                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+              </div>
+              
+              <div class="mb-6">
+                <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In</label>
+                <select id="service" name="service" class="form-control" required>
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="erp">ERP Systems</option>
+                  <option value="web">Web Development</option>
+                  <option value="app">App Development</option>
+                  <option value="social">Social Media & SEO</option>
+                </select>
+              </div>
+              
+              <div class="mb-6">
+                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                <textarea id="message" name="message" rows="4" class="form-control" placeholder="Tell us about your project" required></textarea>
+              </div>
+              
+              <button type="submit" class="btn-primary w-full">
+                Send Message <i class="ml-2 fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <img src="adhigma vertical.png" alt="Adhigama Tech Logo" class="h-12 mb-4">
+          <p class="text-gray-400 mb-4">
+            Premier IT solutions provider in Maharashtra specializing in custom ERP systems, web development, app development, and SEO-optimized digital marketing.
+          </p>
+          <div class="flex space-x-3">
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-bold mb-4">Services</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">ERP Systems</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Web Development</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">App Development</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">SEO Services</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Social Media Marketing</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+            <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Portfolio</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+              <span>Shraddha Colony, Jalgaon, Maharashtra</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-phone-alt mt-1 mr-3 text-primary"></i>
+              <span>+91 9422779791</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-envelope mt-1 mr-3 text-primary"></i>
+              <span>info@adhigama.tech</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400">
+        <p>&copy; 2025 Adhigama Tech. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+
+  // Mobile Menu Toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    menuBtn.innerHTML = mobileMenu.classList.contains('active') ? 
+      '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+  });
+
+  // Close mobile menu when clicking on a link
+  document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+  });
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    const backToTop = document.getElementById('backToTop');
+
+    if (window.scrollY > 50) {
+      navbar.classList.add('shadow-lg', 'py-2');
+      backToTop.classList.add('opacity-100', 'visible');
+    } else {
+      navbar.classList.remove('shadow-lg', 'py-2');
+      backToTop.classList.remove('opacity-100', 'visible');
+    }
+  });
+
+  // Back to top button
+  document.getElementById('backToTop').addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // Form submission to Google Sheet via SheetDB
+  document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value;
+    const timestamp = new Date().toLocaleString();
+
+    fetch("https://sheetdb.io/api/v1/mr9ws539r1pez", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        data: {
+          Name: name,
+          Email: email,
+          Service: service,
+          Message: message,
+          Timestamp: timestamp
+        }
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      alert('Thank you for your message! We will contact you soon.');
+      document.getElementById('contactForm').reset();
+    })
+    .catch(err => {
+      console.error("Error:", err);
+      alert('There was an error submitting the form. Please try again.');
+    });
+  });
+
+  // Counter animation
+  const counters = document.querySelectorAll('.counter-box');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-pulse');
+        setTimeout(() => {
+          entry.target.classList.remove('animate-pulse');
+        }, 1000);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  counters.forEach(counter => {
+    observer.observe(counter);
+  });
+</script>
+
+</body>
+</html>
